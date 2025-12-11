@@ -3,12 +3,13 @@
 @import url(./normalize.css) layer(reset);
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap') layer(init);
 
-@layer design {
+@layer init {
     :root {
         color-scheme: light dark;
         --header-bg-color: light-dark(#3B3E40, #3B3E40);
         --header-text-color: light-dark(#fff, #fff);
         --primary-color: light-dark(#66D4D4, #2b5a5a);
+        --text-color-primary: light-dark(#FFF, #FFF);
         --secondary-color: light-dark(#fff, #fff);
         --text-color: light-dark(#000, #fff);
         --bg-color: light-dark(#fff, #000);
@@ -18,8 +19,41 @@
         font-size: 100%; /* default: 16px */
         color: var(--text-color);
     }
+}
+
+@layer design {
     body {
         background-color: var(--bg-color);
+    }
+    main {
+        padding: 1rem;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    h1 {
+        font-size: 4rem; /* 60px by default */
+        font-weight: extra-bold; /* 800 */
+    }
+    .heading {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700; /* bold */
+    }
+    
+    .heading--h1 {
+        font-size: calc(1em + 3vw); /* responsive size */
+    }
+    .heading--h3 {
+        font-size: 1.125em; /* 18px by default */
+    }
+    .heading--bigger2x {
+        font-size: 2em;
+    }
+
+    
+    .img-fluid {
+        display: block;
+        width: 100%;
+        height: auto;
     }
     .header {
         background-image: url('../images/header-2560w.webp');
@@ -28,12 +62,80 @@
         background-color: var(--header-bg-color);
         color: var(--header-text-color);
         line-height: 1.5;
+        padding: 1rem;
     }
     .header__nav {
         text-align: center;
     }
     .header__link {
+
+    }
+    .header__intro {
+        margin-top: 10vh;
+    }
+
+    .button {
         display: inline-block;
-        margin-top: 1em;
+        border-radius: .5rem;
+        padding: 0.75em 2em;
+        text-decoration: none;
+    }
+    .button--primary {
+        background-color: var(--primary-color);
+        color: var(--text-color-primary);
+    }
+    .button--light {
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+    }
+    .img-block {
+        margin: 0;
+    }
+    .img-block__caption {
+        text-align: center;
+        margin-top: 0.5em;
+    }
+    .info-block {
+        margin: 1em 0;
+        padding: 1.5em;
+        border: 3px solid var(--primary-color);
+    }
+    .info-block--jumbo {
+        background-color: var(--header-bg-color);
+        color: var(--header-text-color);
+        border: none;
+        text-align: center;
+    }
+    .info-block__title {
+        margin-bottom: 1em;
+    }
+    .list__item {
+        margin-bottom: 1em;
+    }
+    .list__item::marker {
+        color: var(--primary-color);
+    }
+    .card {
+        max-width: 20rem;
+        display: inline-block;
+        padding: 1em;
+        vertical-align: top;
+    }
+
+    .gallery {
+       box-sizing: border-box;
+       margin: -1em;
+    }
+    
+    .gallery__item {
+        box-sizing: border-box;
+        width: calc(50% - 2em);
+        display: inline-block;
+        vertical-align: top;
+        margin: 1em;
+    }
+
+    .gallery__item--w100 {
+        width: calc(100% - 2em);
     }
 }
