@@ -115,11 +115,23 @@
     .list__item::marker {
         color: var(--primary-color);
     }
+    .card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 1em;
+    }
     .card {
-        max-width: 20rem;
-        display: inline-block;
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 4;
+        border: 1px solid var(--primary-color);
         padding: 1em;
-        vertical-align: top;
+    }
+    .card__content {
+        align-self: end;
+    }
+    .card p {
+        margin: 0;
     }
 
     .gallery {
