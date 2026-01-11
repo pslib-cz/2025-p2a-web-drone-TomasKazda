@@ -34,17 +34,16 @@
             minmax(20px, 1fr) [full-end];
 
     }
-    main {
-        grid-column: content;
+    .subgrid {
+        grid-column: full !important;
         display: grid;
         grid-template-columns: subgrid;
     }
-    main > * {
+    .subgrid > * {
         grid-column: content;
     }
     .full-bleed {
         grid-column: full;
-        width: 100%;
     }
     h1 {
         font-size: 4rem; /* 60px by default */
@@ -89,6 +88,7 @@
     }
     .header__intro {
         margin-top: 10vh;
+        max-width: 960px;
     }
 
     .button {
